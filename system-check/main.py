@@ -53,7 +53,7 @@ def run():
                 # convert packet to ascii
                 packet_text = str(packet, "ascii")
 
-                # if correct message, send response
+                # if correct message, print acknowledgement
                 if packet_text == receive_text:
                     receive_count += 1
                     receive_success = True
@@ -71,7 +71,7 @@ def run():
         return receive_success
 
     # if testing satellite reception, attempt to send a message
-    if testidx == "Send":
+    if testidx == "Receive":
         print("Sending Message to Satellite (25s)")
         # send a response 5 times and wait 5 seconds each time
         for i in range(attempts):
